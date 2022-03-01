@@ -98,10 +98,6 @@ namespace Primitive_Types_and_Expressions
             Console.WriteLine(c > b || c > a);
 
             Console.WriteLine(!(c > b && c > a));
-
-            var aa = 1;
-            var bb = 2;
-            var cc = 3;
         }
     }
 }
