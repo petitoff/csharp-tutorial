@@ -99,5 +99,19 @@ namespace Primitive_Types_and_Expressions
 
             Console.WriteLine(!(c > b && c > a));
         }
+
+        static void Comments()
+        {
+            // Here is a single-line comment
+
+            /*
+             * Here is a multi-line
+             * comment
+             */
+
+            // or like this
+            // multi-line
+            // comment with only "//"
+        }
     }
 }
