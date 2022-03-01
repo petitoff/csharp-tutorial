@@ -7,7 +7,8 @@ namespace Primitive_Types_and_Expressions
         static void Main(string[] args)
         {
             //VariablesAndConstants();
-            TypeConversion();
+            //TypeConversion();
+            Operators();
         }
 
         static void VariablesAndConstants()
@@ -70,6 +71,37 @@ namespace Primitive_Types_and_Expressions
             {
                 Console.WriteLine("The number could not be converted to a byte.");
             }
+        }
+
+        static void Operators()
+        {
+            var a = 10;
+            var b = 3;
+            var c = 7;
+
+            Console.WriteLine(a / b);
+            Console.WriteLine((float)a / b);
+            Console.WriteLine((a + b) * c);
+
+            Console.WriteLine(a > b);
+            Console.WriteLine(a == b);
+            Console.WriteLine(a != b);
+
+            // This is same
+            Console.WriteLine(!(a != b));
+            Console.WriteLine(a == b); // but this is better
+
+            Console.WriteLine("\nSection && and ||");
+            Console.WriteLine(c > b && a > c);
+
+            Console.WriteLine(c > b && c > a);
+            Console.WriteLine(c > b || c > a);
+
+            Console.WriteLine(!(c > b && c > a));
+
+            var aa = 1;
+            var bb = 2;
+            var cc = 3;
         }
     }
 }
