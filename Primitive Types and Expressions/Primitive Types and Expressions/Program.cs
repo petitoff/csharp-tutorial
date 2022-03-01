@@ -6,6 +6,12 @@ namespace Primitive_Types_and_Expressions
     {
         static void Main(string[] args)
         {
+            VariablesAndConstants();
+        }
+        static void VariablesAndConstants()
+        {
+            // Variables and Constants
+
             byte number = 2;
             int count = 10;
             float totalPrice = 20.95F;
