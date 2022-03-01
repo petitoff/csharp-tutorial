@@ -58,6 +58,19 @@ namespace Primitive_Types_and_Expressions
             string s = "1";
             int i = Convert.ToInt32(s);
             int j = int.Parse(s);
+
+            // Demo: Type Conversion
+            try
+            {
+                var number = "1234";
+                byte byteNumber = Convert.ToByte(number);
+                Console.WriteLine(byteNumber);
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("The number could not be converted to a byte.");
+
+            }
         }
     }
 }
