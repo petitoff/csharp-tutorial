@@ -6,8 +6,10 @@ namespace Primitive_Types_and_Expressions
     {
         static void Main(string[] args)
         {
-            VariablesAndConstants();
+            //VariablesAndConstants();
+            TypeConversion();
         }
+
         static void VariablesAndConstants()
         {
             // Variables and Constants
@@ -39,6 +41,23 @@ namespace Primitive_Types_and_Expressions
 
             const float Pi = 3.14f;
             // Pi = 1; // error
+        }
+
+        static void TypeConversion()
+        {
+            // Type Conversion
+
+            byte a = 1;
+            int b = a;
+            Console.WriteLine($"{a} {b}");
+
+            int c = 1;
+            //byte d = c; // won't compile
+            byte d = (byte)c;
+
+            string s = "1";
+            int i = Convert.ToInt32(s);
+            int j = int.Parse(s);
         }
     }
 }
