@@ -69,7 +69,6 @@ namespace Primitive_Types_and_Expressions
             catch (Exception)
             {
                 Console.WriteLine("The number could not be converted to a byte.");
-
             }
         }
     }
