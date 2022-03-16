@@ -17,7 +17,9 @@ namespace Demo_Strings
             var formattedNames = string.Join(",", names);
             Console.WriteLine(formattedNames);
 
-            var text = @"Hi John\nLook into the following path\nc:\folder1\folder2\folder3\folder4";
+            var text = @"Hi John
+Look into the following path
+c:\folder1\folder2\folder3\folder4";
             Console.WriteLine(text);
         }
     }
