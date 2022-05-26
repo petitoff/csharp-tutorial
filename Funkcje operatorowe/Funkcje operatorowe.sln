@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1972
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Funkcje operatorowe", "Funkcje operatorowe\Funkcje operatorowe.csproj", "{E13F26BE-CBDB-4F2C-8267-23E283FD4DBA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E13F26BE-CBDB-4F2C-8267-23E283FD4DBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E13F26BE-CBDB-4F2C-8267-23E283FD4DBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E13F26BE-CBDB-4F2C-8267-23E283FD4DBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E13F26BE-CBDB-4F2C-8267-23E283FD4DBA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5C35EF34-1D29-4061-9C4A-1A804970E11E}
+	EndGlobalSection
+EndGlobal
