@@ -19,6 +19,8 @@ namespace ReadFromFile
 
         private void button1_Click(object sender, EventArgs e)
         {
+            // tworzymy obiekt klasy i przesyłamy konstruktorem textBox1 do konstruktora klasy class1
+
             Class1 class1 = new Class1(textBox1.Text);
             class1.ReadFromFile(listBox1);
         }
