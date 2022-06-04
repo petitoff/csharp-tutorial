@@ -9,38 +9,39 @@ namespace testing
 {
     internal class Program
     {
+        public static List<string> CardNumberFoundList = new List<string>();
         static void Main()
         {
             //Console.WriteLine(IsValidCreditCardNumber("5297501100132586"));
-            Console.WriteLine(GetCreditCardNumbers("5297501100"));
+            GetCreditCardNumbers("40165848100", 10);
+            foreach (var i in CardNumberFoundList)
+            {
+                Console.WriteLine(i);
+            }
 
         }
 
-        public static string GetCreditCardNumbers(string creditCardNumberPrefix)
+        public static void GetCreditCardNumbers(string creditCardNumberPrefix, int howMany)
         {
             int checkLength = creditCardNumberPrefix.Length;
             int howMushIsMissing = 16 - checkLength;
 
-            if (howMushIsMissing > 6) return "Invalid";
+            if (howMushIsMissing > 6) return;
 
             Random rnd = new Random();
-            //Console.WriteLine(rnd.Next(0, 9));
-            //int result = SumAllNumber(creditCardNumberPrefix);
-            //return result.ToString();
 
-            while (true)
+            while (CardNumberFoundList.Count < howMany)
             {
                 string prefix = "";
-                for (int i = 0; i < 6; i++)
+                for (int i = 0; i < howMushIsMissing; i++)
                 {
                     prefix += rnd.Next(0, 9).ToString();
                 }
 
                 if (IsValidCreditCardNumber(creditCardNumberPrefix + prefix))
                 {
-                    return creditCardNumberPrefix + prefix;
+                    CardNumberFoundList.Add(creditCardNumberPrefix+prefix);
                 }
-                Console.WriteLine(creditCardNumberPrefix + prefix);
             }
         }
 
