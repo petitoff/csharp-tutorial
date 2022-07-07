@@ -57,25 +57,25 @@ namespace WeatherApp.ViewModel
 
         public WeatherVM()
         {
-            if (DesignerProperties.GetIsInDesignMode(new System.Windows.DependencyObject()))
-            {
-                SelectedCity = new City
-                {
-                    LocalizedName = "New York"
-                };
+            //if (DesignerProperties.GetIsInDesignMode(new System.Windows.DependencyObject()))
+            //{
+            //    SelectedCity = new City
+            //    {
+            //        LocalizedName = "New York"
+            //    };
 
-                CurrentConditions = new CurrentConditions
-                {
-                    WeatherText = "Partly cloudy",
-                    Temperature = new Temperature
-                    {
-                        Metric = new Units
-                        {
-                            Value = "21"
-                        }
-                    }
-                };
-            }
+            //    CurrentConditions = new CurrentConditions
+            //    {
+            //        WeatherText = "Partly cloudy",
+            //        Temperature = new Temperature
+            //        {
+            //            Metric = new Units
+            //            {
+            //                Value = "21"
+            //            }
+            //        }
+            //    };
+            //}
 
             SearchCommand = new SearchCommand(this);
             Cities = new ObservableCollection<City>();
