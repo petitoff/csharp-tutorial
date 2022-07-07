@@ -8,4 +8,9 @@
         mc:Ignorable="d"
         Title="WeatherWindow" Height="450" Width="300">
 
+
+    <Window.Resources>
+        <vm:WeatherVM x:Key="vm"/>
+    </Window.Resources>
+
 </Window>
