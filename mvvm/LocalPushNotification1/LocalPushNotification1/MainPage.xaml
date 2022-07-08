@@ -21,9 +21,6 @@
                 FontSize="32"
                 HorizontalOptions="Center" />
 
-            <Label Text="Test"
-                   HorizontalOptions="Center" />
-
             <Button Text="Notify me"
                     Clicked="Button_Clicked"/>
 
