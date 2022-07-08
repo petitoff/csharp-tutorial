@@ -4,25 +4,24 @@ namespace LocalPushNotification1;
 
 public partial class MainPage : ContentPage
 {
-	public MainPage()
-	{
-		InitializeComponent();
-	}
+    public MainPage()
+    {
+        InitializeComponent();
+    }
 
-	private void Button_Clicked(object sender, EventArgs e)
-	{
-		var notification = new NotificationRequest
-		{
-			BadgeNumber = 1,
-			Description = "Text description",
-			Title = "Notification!",
-			ReturningData = "Dummy Data", // returning data when tapped on notification
-			Schedule =
-			{
-				NotifyTime = DateTime.Now.AddSeconds(5) // schedule notification
+    private void Button_Clicked(object sender, EventArgs e)
+    {
+        var notification = new NotificationRequest
+        {
+            BadgeNumber = 1,
+            Description = "Text description",
+            Title = "Notification!",
+            Schedule =
+            {
+                NotifyTime = DateTime.Now.AddSeconds(5) // schedule notification
 			}
         };
-		NotificationCenter.Current.Show(notification);
-	}
+        NotificationCenter.Current.Show(notification);
+    }
 }
 
