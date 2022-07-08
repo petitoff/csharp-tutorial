@@ -18,7 +18,7 @@ public partial class MainPage : ContentPage
             Title = "Notification!",
             Schedule =
             {
-                NotifyTime = DateTime.Now.AddSeconds(5) // schedule notification
+                NotifyTime = DateTime.Now.AddSeconds(10) // schedule notification
 			}
         };
         NotificationCenter.Current.Show(notification);
