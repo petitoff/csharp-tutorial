@@ -30,10 +30,10 @@ public partial class MainPage : ContentPage
 			BadgeNumber = 1,
 			Description = "Text description",
 			Title = "Notification!",
-			ReturningData = "Dummy Data",
+			ReturningData = "Dummy Data", // returning data when tapped on notification
 			Schedule =
 			{
-				NotifyTime = DateTime.Now.AddSeconds(5)
+				NotifyTime = DateTime.Now.AddSeconds(5) // schedule notification
 			}
         };
 		NotificationCenter.Current.Show(notification);
