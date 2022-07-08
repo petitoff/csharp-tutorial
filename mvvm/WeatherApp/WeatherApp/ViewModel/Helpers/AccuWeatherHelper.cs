@@ -49,7 +49,7 @@ namespace WeatherApp.ViewModel.Helpers
                 {
                     string json = await response.Content.ReadAsStringAsync();
 
-                    currentConditions = (JsonConvert.DeserializeObject<List<CurrentConditions>>(json)).FirstOrDefault();
+                    currentConditions = (JsonConvert.DeserializeObject<List<CurrentConditions>>(json) ?? throw new InvalidOperationException()).FirstOrDefault();
                 }
             }
 
