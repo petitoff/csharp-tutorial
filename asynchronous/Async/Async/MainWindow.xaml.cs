@@ -53,6 +53,5 @@ namespace Async
                 streamWriter.Write(html);
             }
         }
-
     }
 }
