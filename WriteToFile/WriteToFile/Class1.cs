@@ -13,13 +13,25 @@ namespace WriteToFile
 
         public void WriteToFile(ListBox listBox, TextBox textBox)
         {
-
-            List<string> textToWrite = new List<string>();
-            foreach (object listBoxItem in listBox.Items)
+            try
             {
-                textToWrite.Add(listBoxItem.ToString());
+                List<string> textToWrite = new List<string>();
+                foreach (object listBoxItem in listBox.Items)
+                {
+                    textToWrite.Add(listBoxItem.ToString());
+                }
+
+                File.WriteAllLines(textBox.Text, textToWrite);
+
             }
-            File.WriteAllLines(textBox.Text, textToWrite);
+            catch (System.ArgumentException e)
+            {
+                MessageBox.Show($"Nie podałeś ścieżki do zapisu pliku!\n\n Kod błędu: {e}");
+                return;
+            }
+
+            MessageBox.Show(@"Zapis do pliku poprawny!");
+            listBox.Items.Clear();
         }
     }
 }

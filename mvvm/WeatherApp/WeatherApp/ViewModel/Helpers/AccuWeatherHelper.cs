@@ -2,12 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 
 using WeatherApp.Model;
 using Newtonsoft.Json;
-using System.Collections;
 
 namespace WeatherApp.ViewModel.Helpers
 {
@@ -49,7 +47,7 @@ namespace WeatherApp.ViewModel.Helpers
                 {
                     string json = await response.Content.ReadAsStringAsync();
 
-                    currentConditions = (JsonConvert.DeserializeObject<List<CurrentConditions>>(json)).FirstOrDefault();
+                    currentConditions = (JsonConvert.DeserializeObject<List<CurrentConditions>>(json) ?? throw new InvalidOperationException()).FirstOrDefault();
                 }
             }
 
