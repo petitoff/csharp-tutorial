@@ -20,5 +20,10 @@ namespace Async_2
             MessageBox.Show(html.Substring(0,10));
         }
 
+        private async Task<string> GetHtmlAsync(string url)
+        {
+            var webClient = new WebClient();
+            return await webClient.DownloadStringTaskAsync(url);
+        }
     }
 }
