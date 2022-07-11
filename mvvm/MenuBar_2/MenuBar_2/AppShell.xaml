@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="MenuBar_2.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MenuBar_2"
+    xmlns:pages="clr-namespace:MenuBar_2.Pages"
+    Shell.FlyoutBehavior="Disabled">
+
+    <!--<ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />-->
+
+    <!--<Shell.ItemTemplate>
+        <DataTemplate>
+            <Grid Padding="10,10,0,10">
+                <Label Grid.Column="1"
+                   Text="{Binding Title}"
+                   FontSize="Small"
+                   FontAttributes="Bold"
+                   VerticalOptions="Center"/>
+            </Grid>
+        </DataTemplate>
+    </Shell.ItemTemplate>-->
+
+    <TabBar>
+        <Tab Title="Home"
+             Icon="home.png">
+                <ShellContent ContentTemplate="{DataTemplate pages:HomePage}" />
+        </Tab>
+        <Tab Title="Konfigurator"
+            Icon="bin.png">
+            <ShellContent ContentTemplate="{DataTemplate pages:Configurator}" />
+        </Tab>
+        <Tab Title="Opcje"
+            Icon="setting.png">
+            <ShellContent ContentTemplate="{DataTemplate pages:Settings}" />
+        </Tab>
+    </TabBar>
+
+</Shell>
