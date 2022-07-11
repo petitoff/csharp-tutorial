@@ -9,6 +9,7 @@ using WeatherApp.Model;
 using WeatherApp.ViewModel.Helpers;
 using WeatherApp.ViewModel.Commands;
 using System.Collections.ObjectModel;
+using System.Runtime.CompilerServices;
 
 namespace WeatherApp.ViewModel
 {
@@ -22,7 +23,7 @@ namespace WeatherApp.ViewModel
             set
             {
                 query = value;
-                OnPropertyChaned("Query");
+                OnPropertyChaned(nameof(Query));
             }
         }
 
@@ -36,7 +37,7 @@ namespace WeatherApp.ViewModel
             set
             {
                 currentConditions = value;
-                OnPropertyChaned("CurrentConditions");
+                OnPropertyChaned(nameof(CurrentConditions));
             }
         }
 
@@ -48,7 +49,7 @@ namespace WeatherApp.ViewModel
             set
             {
                 selectedCity = value;
-                OnPropertyChaned("SelectedCity");
+                OnPropertyChaned(nameof(SelectedCity));
                 GetCurrentConditions();
             }
         }
@@ -93,7 +94,7 @@ namespace WeatherApp.ViewModel
             var cities = await AccuWeatherHelper.GetCities(Query);
 
             Cities.Clear();
-            foreach(var city in cities)
+            foreach (var city in cities)
             {
                 Cities.Add(city);
             }
@@ -101,7 +102,7 @@ namespace WeatherApp.ViewModel
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private void OnPropertyChaned(string propertyName)
+        private void OnPropertyChaned([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
