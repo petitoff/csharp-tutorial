@@ -13,5 +13,12 @@ namespace Async_2
         {
             InitializeComponent();
         }
+
+        private async void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        {
+            var html = await GetHtmlAsync("http://google.com");
+            MessageBox.Show(html.Substring(0,10));
+        }
+
     }
 }
