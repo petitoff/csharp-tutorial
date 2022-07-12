@@ -1,4 +1,7 @@
-﻿namespace eBin_1.ViewModel
+﻿using eBin_1.ViewModel.Services;
+using eBin_1.ViewModel.Commands;
+
+namespace eBin_1.ViewModel
 {
     public class ConfiguratorViewModel : INotifyPropertyChanged
     {
