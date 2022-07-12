@@ -5,3 +5,4 @@ global using System.ComponentModel;
 global using System.Diagnostics;
 global using System.Runtime.CompilerServices;
 global using System.Text.Json;
+global using eBin_1.Model;
