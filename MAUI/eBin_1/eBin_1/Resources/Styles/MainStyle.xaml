@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xaml-comp compile="true" ?>
+<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <Style x:Key="MainGrid" TargetType="Grid">
+        <Setter Property="BackgroundColor" Value="{StaticResource DarkBlue}" />
+    </Style>
+
+
+    <Style x:Key="TabBarDark" TargetType="TabBar">
+        <Setter Property="Shell.TabBarBackgroundColor"
+            Value="{StaticResource Gray950}" />
+        <Setter Property="Shell.TabBarTitleColor"
+            Value="{StaticResource Primary}" />
+        <Setter Property="Shell.TabBarUnselectedColor"
+            Value="White" />
+    </Style>
+
+    <Style x:Key="PrimaryButton" TargetType="Button">
+        <Setter Property="Background" Value="{StaticResource PrimaryYellow}" />
+        <Setter Property="TextColor" Value="{StaticResource DarkBlue}" />
+        <Setter Property="BorderWidth" Value="2" />
+        <Setter Property="HeightRequest" Value="40" />
+        <Setter Property="CornerRadius" Value="20" />
+    </Style>
+</ResourceDictionary>
