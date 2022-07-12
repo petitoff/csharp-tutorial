@@ -19,11 +19,18 @@ namespace eBin_1.ViewModel
         public async void SaveDataVM()
         {
             await ConfiguratorService.SaveData(exports);
+            ClearEntry();
         }
 
         public async void LoadDataVM()
         {
             var response = await ConfiguratorService.LoadData();
+        }
+
+        public void ClearEntry()
+        {
+            Street = "";
+            City = "";
         }
 
         public string Street
@@ -34,6 +41,19 @@ namespace eBin_1.ViewModel
                 if (exports.Street != value)
                 {
                     exports.Street = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        public string City
+        {
+            get => exports.City;
+            set
+            {
+                if(exports.City != value)
+                {
+                    exports.City = value;
                     OnPropertyChanged();
                 }
             }
