@@ -49,11 +49,29 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Icons\bin.png" />
+	  <None Remove="Resources\Icons\home.png" />
+	  <None Remove="Resources\Icons\setting.png" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <Folder Include="Models\" />
 	  <Folder Include="ViewModels\" />
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiImage Include="Resources\Icons\bin.png" />
+	  <MauiImage Include="Resources\Icons\home.png" />
+	  <MauiImage Include="Resources\Icons\setting.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Resources\Styles\MainStyle.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Configurator.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\MainPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
