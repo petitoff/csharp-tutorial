@@ -4,25 +4,24 @@ namespace MonkeyFinder.ViewModel;
 
 public partial class MonkeysViewModel : BaseViewModel
 {
-    // odwołanie się do obiektu Monkey w Model
+    // model
     public ObservableCollection<Monkey> Monkeys { get; } = new();
 
-    // utworzenie instacji obiektu MonkeyService
+    // service
     MonkeyService monkeyService;
 
-    // konstruktor, dzięki któremu przekażemy do view informacje za pomocą data binding
     public MonkeysViewModel(MonkeyService monkeyService)
     {
         Title = "Monkey Finder";
         this.monkeyService = monkeyService;
     }
 
-    // to funkcja wykona się po kliknięciu przycisku
-    [RelayCommand]
     async Task GetMonkeysAsync()
     {
-        if (IsBusy)
+        if(IsBusy)
+        {
             return;
+        }
 
         try
         {
@@ -30,21 +29,22 @@ public partial class MonkeysViewModel : BaseViewModel
             var monkeys = await monkeyService.GetMonkeys();
 
             if(Monkeys.Count != 0)
+            {
                 Monkeys.Clear();
-                
-            foreach(var monkey in monkeys)
-                Monkeys.Add(monkey);
+            }
 
+            foreach(var monkey in monkeys)
+            {
+                Monkeys.Add(monkey);
+            }
         }
-        catch (Exception ex)
+        catch
         {
-            Debug.WriteLine($"Unable to get monkeys: {ex.Message}");
-            await Shell.Current.DisplayAlert("Error!", ex.Message, "OK");
+
         }
         finally
         {
             IsBusy = false;
         }
-
     }
 }
