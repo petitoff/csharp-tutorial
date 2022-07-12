@@ -5,8 +5,14 @@ namespace eBin_1.ViewModel
 {
     public partial class ConfiguratorViewModel : BaseViewModel
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-        public void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        public SaveExportsCommand SaveExportsCommand { get; set; }
+        public LoadExportsCommand LoadExportsCommand { get; set; }
+
+        public ConfiguratorViewModel()
+        {
+            SaveExportsCommand = new SaveExportsCommand(this);
+            LoadExportsCommand = new LoadExportsCommand(this);
+        }
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
