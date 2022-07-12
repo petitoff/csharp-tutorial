@@ -50,13 +50,17 @@
 
 	<ItemGroup>
 	  <None Remove="Resources\Icons\bin.png" />
+	  <None Remove="Resources\Icons\config.png" />
 	  <None Remove="Resources\Icons\home.png" />
+	  <None Remove="Resources\Icons\list-text.png" />
+	  <None Remove="Resources\Icons\list.png" />
 	  <None Remove="Resources\Icons\setting.png" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <MauiImage Include="Resources\Icons\bin.png" />
 	  <MauiImage Include="Resources\Icons\home.png" />
+	  <MauiImage Include="Resources\Icons\list.png" />
 	  <MauiImage Include="Resources\Icons\setting.png" />
 	</ItemGroup>
 
@@ -70,6 +74,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\Configurator.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\ListOfExports.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\MainPage.xaml">
