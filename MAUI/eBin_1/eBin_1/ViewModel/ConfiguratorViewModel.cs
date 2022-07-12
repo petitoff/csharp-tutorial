@@ -16,7 +16,6 @@ namespace eBin_1.ViewModel
 
         Exports exports = new();
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
         private string street;
