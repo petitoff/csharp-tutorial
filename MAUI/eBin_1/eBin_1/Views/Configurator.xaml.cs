@@ -4,9 +4,9 @@ namespace eBin_1.Views;
 
 public partial class Configurator : ContentPage
 {
-	public Configurator()
+	public Configurator(ConfiguratorViewModel configuratorViewModel)
 	{
 		InitializeComponent();
-		BindingContext = new ConfiguratorViewModel();
+		BindingContext = configuratorViewModel;
 	}
 }
