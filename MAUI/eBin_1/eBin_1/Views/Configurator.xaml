@@ -2,15 +2,42 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="eBin_1.Views.Configurator"
+             xmlns:vm="clr-namespace:eBin_1.ViewModel"
              Title="Konfigurator">
 
-    <Grid Style="{StaticResource MainGrid}"
-          RowDefinitions="*,*">
+    <Grid Style="{StaticResource MainGrid}">
+        <StackLayout Margin="50,60">
+            <Label Text="Ulica"
+                   TextColor="White"
+                   FontSize="20"
+                   Margin="0,20,0,5"/>
+            <Grid x:DataType="vm:ConfiguratorViewModel">
+                <Frame Margin="-10,0"/>
+                <Entry Text="{Binding Street}"/>
+            </Grid>
 
-        <Button Text="Find Closest" 
+            <Label Text="Miejscowość"
+                   TextColor="White"
+                   FontSize="20"
+                   Margin="0,20,0,5"/>
+            <Grid>
+                <Frame Margin="-10,0"/>
+                <Entry />
+            </Grid>
+            
+            <Button Text="Zapisz" 
+                Grid.Row="1"
+                Grid.Column="1"
+                Margin="0,50,0,10"
+                Style="{StaticResource PrimaryButton}"/>
+        </StackLayout>
+
+        <!--<StackLayout Grid.Row="1">
+            <Button Text="Zapisz" 
                 Grid.Row="1"
                 Grid.Column="1"
                 Margin="0,0,0,10"
                 Style="{StaticResource PrimaryButton}"/>
+        </StackLayout>-->
     </Grid>
 </ContentPage>
