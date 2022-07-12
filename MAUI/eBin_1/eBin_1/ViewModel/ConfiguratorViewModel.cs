@@ -13,6 +13,8 @@ namespace eBin_1.ViewModel
             SaveExportsCommand = new SaveExportsCommand(this);
             LoadExportsCommand = new LoadExportsCommand(this);
         }
+
+        Exports exports = new();
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
