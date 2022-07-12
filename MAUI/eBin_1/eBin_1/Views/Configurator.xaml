@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="eBin_1.Views.Configurator"
              xmlns:vm="clr-namespace:eBin_1.ViewModel"
+             x:DataType="vm:ConfiguratorViewModel"
              Title="Konfigurator">
 
     <Grid Style="{StaticResource MainGrid}">
@@ -11,7 +12,7 @@
                    TextColor="White"
                    FontSize="20"
                    Margin="0,20,0,5"/>
-            <Grid x:DataType="vm:ConfiguratorViewModel">
+            <Grid>
                 <Frame Margin="-10,0"/>
                 <Entry Text="{Binding Street}"/>
             </Grid>
