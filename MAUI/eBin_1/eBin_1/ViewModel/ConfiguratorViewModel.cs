@@ -3,7 +3,7 @@ using eBin_1.ViewModel.Commands;
 
 namespace eBin_1.ViewModel
 {
-    public class ConfiguratorViewModel : INotifyPropertyChanged
+    public partial class ConfiguratorViewModel : BaseViewModel
     {
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string propertyName = null)
