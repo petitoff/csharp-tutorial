@@ -21,8 +21,10 @@
     <Style x:Key="PrimaryButton" TargetType="Button">
         <Setter Property="Background" Value="{StaticResource PrimaryYellow}" />
         <Setter Property="TextColor" Value="{StaticResource DarkBlue}" />
+        <Setter Property="BorderColor" Value="{StaticResource DarkBlue}" />
         <Setter Property="BorderWidth" Value="2" />
         <Setter Property="HeightRequest" Value="40" />
+        <Setter Property="WidthRequest" Value="100" />
         <Setter Property="CornerRadius" Value="20" />
     </Style>
 </ResourceDictionary>
