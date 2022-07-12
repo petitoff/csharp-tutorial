@@ -7,9 +7,22 @@
     xmlns:view="clr-namespace:eBin_1.Views"
     Shell.FlyoutBehavior="Disabled">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate view:MainPage}"
-        Route="MainPage" />
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Style x:Key="BaseStyle" TargetType="Element">
+                <Setter Property="Shell.BackgroundColor" Value="{StaticResource DarkBlue}" />
+            </Style>
+            <Style BasedOn="{StaticResource BaseStyle}" TargetType="ShellItem" ApplyToDerivedTypes="True" />
+        </ResourceDictionary>
+    </Shell.Resources>
+
+    <TabBar Style="{StaticResource TabBarDark}">
+        <Tab Title="Home" Icon="home.png">
+            <ShellContent ContentTemplate="{DataTemplate view:MainPage}" />
+        </Tab>
+        <Tab Title="Konfigurator" Icon="bin.png">
+            <ShellContent ContentTemplate="{DataTemplate view:Configurator}" />
+        </Tab>
+    </TabBar>
 
 </Shell>
