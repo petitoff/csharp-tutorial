@@ -25,7 +25,7 @@
                 <Frame Margin="-10,0"/>
                 <Entry />
             </Grid>
-            
+
             <Button Text="Zapisz" 
                 Grid.Row="1"
                 Grid.Column="1"
