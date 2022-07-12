@@ -23,6 +23,9 @@
         <Tab Title="Konfigurator" Icon="bin.png">
             <ShellContent ContentTemplate="{DataTemplate view:Configurator}" />
         </Tab>
+        <Tab Title="Lista" Icon="list.png">
+            <ShellContent ContentTemplate="{DataTemplate view:ListOfExports}" />
+        </Tab>
     </TabBar>
 
 </Shell>
