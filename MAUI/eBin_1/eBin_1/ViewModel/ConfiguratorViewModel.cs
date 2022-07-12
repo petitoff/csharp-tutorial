@@ -15,22 +15,28 @@ namespace eBin_1.ViewModel
         }
 
         Exports exports = new();
+
+        public async void SaveDataVM()
         {
+            await ConfiguratorService.SaveData(exports);
         }
 
-        private string street;
+        public async void LoadDataVM()
+        {
+            var response = await ConfiguratorService.LoadData();
+        }
+
         public string Street
         {
-            get => street;
+            get => exports.Street;
             set
             {
-                if (street != value)
+                if (exports.Street != value)
                 {
-                    street = value;
+                    exports.Street = value;
                     OnPropertyChanged();
                 }
             }
-
         }
     }
 }
