@@ -30,7 +30,15 @@
                 Grid.Row="1"
                 Grid.Column="1"
                 Margin="0,50,0,10"
-                Style="{StaticResource PrimaryButton}"/>
+                Style="{StaticResource PrimaryButton}"
+                Command="{Binding SaveExportsCommand}"/>
+
+            <Button Text="Odczytaj" 
+                Grid.Row="1"
+                Grid.Column="1"
+                Margin="0,50,0,10"
+                Style="{StaticResource PrimaryButton}"
+                    Command="{Binding LoadExportsCommand}"/>
         </StackLayout>
 
         <!--<StackLayout Grid.Row="1">
