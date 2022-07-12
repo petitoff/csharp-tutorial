@@ -1,4 +1,8 @@
-﻿namespace eBin_1;
+﻿using eBin_1.ViewModel;
+using eBin_1.ViewModel.Services;
+using eBin_1.Views;
+
+namespace eBin_1;
 
 public static class MauiProgram
 {
@@ -13,6 +17,12 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
 
-		return builder.Build();
+		builder.Services.AddSingleton<MainPage>();
+        builder.Services.AddSingleton<Configurator>();
+
+		builder.Services.AddSingleton<ConfiguratorViewModel>();
+		builder.Services.AddSingleton<ConfiguratorService>();
+
+        return builder.Build();
 	}
 }
