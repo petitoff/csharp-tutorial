@@ -6,6 +6,7 @@
              x:DataType="vm:ConfiguratorViewModel"
              Title="Konfigurator">
 
+
     <Grid Style="{StaticResource MainGrid}">
         <StackLayout Margin="50,60">
             <Label Text="Ulica"
@@ -23,7 +24,7 @@
                    Margin="0,20,0,5"/>
             <Grid>
                 <Frame Margin="-10,0"/>
-                <Entry />
+                <Entry Text="{Binding City}"/>
             </Grid>
 
             <Button Text="Zapisz" 
@@ -40,13 +41,5 @@
                 Style="{StaticResource PrimaryButton}"
                     Command="{Binding LoadExportsCommand}"/>
         </StackLayout>
-
-        <!--<StackLayout Grid.Row="1">
-            <Button Text="Zapisz" 
-                Grid.Row="1"
-                Grid.Column="1"
-                Margin="0,0,0,10"
-                Style="{StaticResource PrimaryButton}"/>
-        </StackLayout>-->
     </Grid>
 </ContentPage>
