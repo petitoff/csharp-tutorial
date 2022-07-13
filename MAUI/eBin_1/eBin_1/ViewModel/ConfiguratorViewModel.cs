@@ -1,30 +1,24 @@
 ﻿using eBin_1.ViewModel.Services;
-using eBin_1.ViewModel.Commands;
 
 namespace eBin_1.ViewModel
 {
     public partial class ConfiguratorViewModel : BaseViewModel
     {
-        public SaveExportsCommand SaveExportsCommand { get; set; }
-        public LoadExportsCommand LoadExportsCommand { get; set; }
+        // model
+        Exports exports = new();
+
+        // service
+        ConfiguratorService configuratorService;
 
         public ConfiguratorViewModel()
         {
-            SaveExportsCommand = new SaveExportsCommand(this);
-            LoadExportsCommand = new LoadExportsCommand(this);
+            //this.configuratorService = configuratorService;
         }
 
-        Exports exports = new();
-
-        public async void SaveDataVM()
+        [RelayCommand]
+        private async Task SaveDataVM()
         {
             await ConfiguratorService.SaveData(exports);
-            ClearEntry();
-        }
-
-        public async void LoadDataVM()
-        {
-            var response = await ConfiguratorService.LoadData();
         }
 
         public void ClearEntry()
@@ -51,7 +45,7 @@ namespace eBin_1.ViewModel
             get => exports.City;
             set
             {
-                if(exports.City != value)
+                if (exports.City != value)
                 {
                     exports.City = value;
                     OnPropertyChanged();
