@@ -16,6 +16,7 @@ public partial class MonkeysViewModel : BaseViewModel
         this.monkeyService = monkeyService;
     }
 
+    [RelayCommand]
     async Task GetMonkeysAsync()
     {
         if(IsBusy)
@@ -38,9 +39,10 @@ public partial class MonkeysViewModel : BaseViewModel
                 Monkeys.Add(monkey);
             }
         }
-        catch
+        catch (Exception ex)
         {
-
+            Debug.WriteLine(ex.Message);
+            await Shell.Current.DisplayAlert("Error", ex.Message, "OK");
         }
         finally
         {

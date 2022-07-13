@@ -3,43 +3,34 @@
     x:Class="MonkeyFinder.View.MainPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:MonkeyFinder.ViewModel"
+    x:DataType="vm:MonkeysViewModel"
+    Title="{Binding Title}"
     xmlns:model="clr-namespace:MonkeyFinder.Model">
 
-    <CollectionView>
-        <CollectionView.ItemsSource>
-            <x:Array Type="{x:Type model:Monkey}">
-               <model:Monkey
-                    Name="Baboon"
-                    Image="https://raw.githubusercontent.com/jamesmontemagno/app-monkeys/master/baboon.jpg"
-                    Location="Africa and Asia" />
-                <model:Monkey
-                    Name="Capuchin Monkey"
-                    Image="https://raw.githubusercontent.com/jamesmontemagno/app-monkeys/master/capuchin.jpg"
-                    Location="Central and South America" />
-                <model:Monkey
-                    Name="Red-shanked douc"
-                    Image="https://raw.githubusercontent.com/jamesmontemagno/app-monkeys/master/douc.jpg"
-                    Location="Vietnam" />
-            </x:Array>
-        </CollectionView.ItemsSource>
-        <CollectionView.ItemTemplate>
-            <DataTemplate x:DataType="model:Monkey">
-                <HorizontalStackLayout Padding="10">
-                    <Image
-                        Aspect="AspectFill"
-                        HeightRequest="100"
-                        Source="{Binding Image}"
-                        WidthRequest="100" />
-                    <Label VerticalOptions="Center">
-                        <Label.Text>
-                            <MultiBinding StringFormat="{}{0} | {1}">
-                                <Binding Path="Name" />
-                                <Binding Path="Location" />
-                            </MultiBinding>
-                        </Label.Text>
-                    </Label>
-                </HorizontalStackLayout>
-            </DataTemplate>
-        </CollectionView.ItemTemplate>
-    </CollectionView>
+    <Grid ColumnDefinitions="*,*"
+          ColumnSpacing="5"
+          RowDefinitions="*, Auto"
+          RowSpacing="0">
+        
+        <CollectionView Grid.ColumnSpan="2"
+                        ItemsSource="{Binding Monkeys}"
+                        SelectionMode="None">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="model:Monkey">
+                    <Grid Padding="10">
+                        <Frame HeightRequest="125">
+                            <Label Text="{Binding Name}" />
+                        </Frame>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+            
+        </CollectionView>
+        
+        <Button Text="Get Monkeys"
+                Grid.Row="1"
+                Margin="8"
+                Command="{Binding GetMonkeysCommand}"/>
+    </Grid>
 </ContentPage>
