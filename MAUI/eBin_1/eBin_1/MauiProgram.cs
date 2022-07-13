@@ -19,8 +19,9 @@ public static class MauiProgram
 
 		builder.Services.AddSingleton<MainPage>();
         builder.Services.AddSingleton<Configurator>();
+        builder.Services.AddSingleton<ListOfExports>();
 
-		builder.Services.AddSingleton<ConfiguratorViewModel>();
+        builder.Services.AddSingleton<ConfiguratorViewModel>();
 		builder.Services.AddSingleton<ConfiguratorService>();
 
         return builder.Build();
