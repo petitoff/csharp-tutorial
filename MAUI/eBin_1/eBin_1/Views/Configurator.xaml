@@ -2,12 +2,14 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="eBin_1.Views.Configurator"
+             xmlns:model="clr-namespace:eBin_1.Model"
              xmlns:vm="clr-namespace:eBin_1.ViewModel"
              x:DataType="vm:ConfiguratorViewModel"
              Title="Konfigurator">
 
 
-    <Grid Style="{StaticResource MainGrid}">
+    <Grid Style="{StaticResource MainGrid}"
+          x:DataType="model:Exports">
         <StackLayout Margin="50,60">
             <Label Text="Ulica"
                    TextColor="White"
@@ -32,14 +34,15 @@
                 Grid.Column="1"
                 Margin="0,50,0,10"
                 Style="{StaticResource PrimaryButton}"
-                Command="{Binding SaveExportsCommand}"/>
+                    x:DataType="vm:ConfiguratorViewModel"
+                Command="{Binding SaveDataVMCommand}"/>
 
-            <Button Text="Odczytaj" 
+            <!--<Button Text="Odczytaj" 
                 Grid.Row="1"
                 Grid.Column="1"
                 Margin="0,50,0,10"
                 Style="{StaticResource PrimaryButton}"
-                    Command="{Binding LoadExportsCommand}"/>
+                    Command="{Binding LoadExportsCommand}"/>-->
         </StackLayout>
     </Grid>
 </ContentPage>
