@@ -5,14 +5,10 @@ namespace eBin_1.ViewModel
     public partial class ConfiguratorViewModel : BaseViewModel
     {
         // model
-        Exports exports = new();
-
-        // service
-        ConfiguratorService configuratorService;
+        private Exports exports = new();
 
         public ConfiguratorViewModel()
         {
-            //this.configuratorService = configuratorService;
         }
 
         [RelayCommand]
