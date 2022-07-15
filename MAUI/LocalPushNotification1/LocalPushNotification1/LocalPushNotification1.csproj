@@ -49,11 +49,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <PackageReference Include="Plugin.LocalNotification" Version="9.2.0" />
+	  <AndroidResource Remove="Services\**" />
+	  <Compile Remove="Services\**" />
+	  <EmbeddedResource Remove="Services\**" />
+	  <MauiCss Remove="Services\**" />
+	  <MauiXaml Remove="Services\**" />
+	  <None Remove="Services\**" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Services\" />
+	  <PackageReference Include="Plugin.LocalNotification" Version="9.2.0" />
 	</ItemGroup>
 
 </Project>
