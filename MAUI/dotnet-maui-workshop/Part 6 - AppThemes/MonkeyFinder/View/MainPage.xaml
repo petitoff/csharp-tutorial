@@ -5,33 +5,25 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:model="clr-namespace:MonkeyFinder.Model"
     xmlns:viewmodel="clr-namespace:MonkeyFinder.ViewModel"
-    xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
-    ios:Page.UseSafeArea="True"
     Title="Monkeys"
     x:DataType="viewmodel:MonkeysViewModel">
+    
     <Grid
         ColumnDefinitions="*,*"
         ColumnSpacing="5"
         RowDefinitions="*,Auto"
         RowSpacing="0">
+
+        <Label Text="{Binding Test}" />
+
         <RefreshView
             Grid.ColumnSpan="2"
             Command="{Binding GetMonkeysCommand}"
             IsRefreshing="{Binding IsRefreshing}">
+            
             <CollectionView
                 ItemsSource="{Binding Monkeys}"
                 SelectionMode="None">
-                <!--<CollectionView.EmptyView>
-                    <StackLayout Padding="100">
-                        <Image
-                            HorizontalOptions="CenterAndExpand"
-                            Source="nodata.png"
-                            VerticalOptions="CenterAndExpand" />
-                    </StackLayout>
-                </CollectionView.EmptyView>
-                <CollectionView.ItemsLayout>
-                    <GridItemsLayout  Orientation="Horizontal" Span="3"/>
-                </CollectionView.ItemsLayout>-->
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="model:Monkey">
                         <Grid Padding="10">
@@ -59,6 +51,7 @@
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
+            
         </RefreshView>
 
         <Button

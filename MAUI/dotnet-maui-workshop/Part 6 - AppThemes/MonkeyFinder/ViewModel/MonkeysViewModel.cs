@@ -1,4 +1,5 @@
 ﻿using MonkeyFinder.Services;
+using Newtonsoft.Json;
 
 namespace MonkeyFinder.ViewModel;
 
@@ -56,10 +57,15 @@ public partial class MonkeysViewModel : BaseViewModel
         }
 
     }
+
+    [ObservableProperty]
+    private string test;
     
     [RelayCommand]
     async Task GoToDetails(Monkey monkey)
     {
+        Test = JsonConvert.SerializeObject(monkey);
+
         if (monkey == null)
         return;
 
